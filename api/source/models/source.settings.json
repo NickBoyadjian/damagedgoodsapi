@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sources",
+  "info": {
+    "name": "source"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "date_of_intake": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string"
+    },
+    "items": {
+      "collection": "items",
+      "via": "sources",
+      "dominant": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "front_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "back_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "cuts": {
+      "collection": "cut",
+      "via": "source"
+    }
+  }
+}

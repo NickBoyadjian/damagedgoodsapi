@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cuts",
+  "info": {
+    "name": "cut"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "item_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "source_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "item": {
+      "via": "cuts",
+      "model": "items"
+    },
+    "source": {
+      "via": "cuts",
+      "model": "source"
+    }
+  }
+}
